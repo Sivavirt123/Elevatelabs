@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background floating bubbles */
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rise 20s infinite ease-in;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.todo-container {
+  z-index: 1;
+  background: #ffffffd9;
+  padding: 30px;
+  border-radius: 15px;
+  width: 360px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.7s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 68%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #66a6ff;
+  outline: none;
+}
+
+button {
+  padding: 10px 14px;
+  background: #66a6ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #4b79a1;
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background: #f7f7f7;
+  margin-bottom: 12px;
+  padding: 12px 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.4s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+li.completed {
+  background-color: #c0ffd1;
+  text-decoration: line-through;
+  color: #555;
+}
+
+.remove-btn {
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background-color: darkred;
+  transform: scale(1.1);
+}

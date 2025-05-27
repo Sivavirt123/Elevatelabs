@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Animated To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Floating bubbles for background animation -->
+    <script>
+      for (let i = 0; i < 25; i++) {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        bubble.style.width = bubble.style.height = ${Math.random() * 40 + 10}px;
+        bubble.style.left = ${Math.random() * 100} % ;
+        bubble.style.animationDuration = ${Math.random() * 10 + 10}s;
+        bubble.style.animationDelay = ${Math.random() * 10}s;
+        document.body.appendChild(bubble);
+      }
+    </script>
+
+    <div class="todo-container">
+      <h2>My To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Enter new task" />
+      <button onclick="addTask()">Add</button>
+      <ul id="taskList"></ul>
+    </div>
+
+    <script>
+      function addTask() {
+        const input = document.getElementById("taskInput");
+        const taskText = input.value.trim();
+
+        if (taskText === "") {
+          alert("Please enter a task!");
+          return;
+        }
+
+        const list = document.getElementById("taskList");
+        const li = document.createElement("li");
+        li.textContent = taskText;
+
+        // Slide in animation
+        li.style.animation = "slideIn 0.4s ease forwards";
+
+        // Toggle complete
+        li.addEventListener("click", function () {
+          li.classList.toggle("completed");
+        });
+
+        // Remove task
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "×";
+        removeBtn.className = "remove-btn";
+        removeBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          li.style.transition = "opacity 0.3s, transform 0.3s";
+          li.style.opacity = "0";
+          li.style.transform = "translateX(50px)";
+          setTimeout(() => list.removeChild(li), 300);
+        });
+
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+        input.value = "";
+      }
+    </script>
+  </body>
+</html>
