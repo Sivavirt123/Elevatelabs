@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+body {
+  background-color: rgb(81, 156, 139);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: rgb(210, 203, 203);
+  height: 120px;
+  border-radius: 20px;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius: 50px;
+}
+.name {
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-left: 550px;
+}
+.navlinks a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  background-color: rgb(0, 0, 0);
+  padding: 15px 30px;
+  border-radius: 22px;
+  font-weight: bold;
+}
+.text1 {
+  text-align: center;
+  font-size: 50px;
+  font-style: italic;
+  font-family: algerian;
+  color: white;
+}
+.para1 {
+  text-align: center;
+  font-size: 35px;
+  font-style: italic;
+  font-family: algerian;
+  color: white;
+}
+.btn {
+  margin-left: 700px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 15px 40px;
+  font-weight: bold;
+  border-radius: 90px;
+}
+.footer {
+  margin-top: 260px;
+  height: 100px;
+  text-align: center;
+  background-color: rgb(210, 203, 203);
+  padding: 10px;
+  border-radius: 20px;
+}
+.smlinks a {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+  margin-left: 30px;
+  border-radius: 20px;
+}
+.smlinks p {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .navlinks {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .navlinks a {
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .text1 {
+    font-size: 32px;
+    padding: 0 10px;
+  }
+
+  .para1 {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  .btn {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+
+  .footer {
+    margin-top: 100px;
+    padding: 20px;
+    height: auto;
+  }
+
+  .smlinks a {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+  }
+
+  .smlinks p {
+    font-size: 16px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
